@@ -14,6 +14,9 @@
 		381B13E52A167A7500E47E10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 381B13E42A167A7500E47E10 /* Assets.xcassets */; };
 		381B13E82A167A7500E47E10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 381B13E62A167A7500E47E10 /* LaunchScreen.storyboard */; };
 		381B13F02A167D5600E47E10 /* PersonCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381B13EF2A167D5600E47E10 /* PersonCellTableViewCell.swift */; };
+		381B13F42A16812000E47E10 /* CreateContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381B13F32A16812000E47E10 /* CreateContactViewController.swift */; };
+		381B13F62A16816C00E47E10 /* UpdateTheContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381B13F52A16816C00E47E10 /* UpdateTheContactViewController.swift */; };
+		381B13F82A16819400E47E10 /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381B13F72A16819400E47E10 /* PersonDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		381B13E72A167A7500E47E10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		381B13E92A167A7500E47E10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		381B13EF2A167D5600E47E10 /* PersonCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCellTableViewCell.swift; sourceTree = "<group>"; };
+		381B13F32A16812000E47E10 /* CreateContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateContactViewController.swift; sourceTree = "<group>"; };
+		381B13F52A16816C00E47E10 /* UpdateTheContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTheContactViewController.swift; sourceTree = "<group>"; };
+		381B13F72A16819400E47E10 /* PersonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,9 @@
 				381B13DD2A167A7500E47E10 /* SceneDelegate.swift */,
 				381B13DF2A167A7500E47E10 /* ViewController.swift */,
 				381B13E12A167A7500E47E10 /* Main.storyboard */,
+				381B13F32A16812000E47E10 /* CreateContactViewController.swift */,
+				381B13F52A16816C00E47E10 /* UpdateTheContactViewController.swift */,
+				381B13F72A16819400E47E10 /* PersonDetailViewController.swift */,
 				381B13EF2A167D5600E47E10 /* PersonCellTableViewCell.swift */,
 				381B13E42A167A7500E47E10 /* Assets.xcassets */,
 				381B13E62A167A7500E47E10 /* LaunchScreen.storyboard */,
@@ -143,7 +152,10 @@
 			files = (
 				381B13E02A167A7500E47E10 /* ViewController.swift in Sources */,
 				381B13DC2A167A7500E47E10 /* AppDelegate.swift in Sources */,
+				381B13F42A16812000E47E10 /* CreateContactViewController.swift in Sources */,
 				381B13F02A167D5600E47E10 /* PersonCellTableViewCell.swift in Sources */,
+				381B13F62A16816C00E47E10 /* UpdateTheContactViewController.swift in Sources */,
+				381B13F82A16819400E47E10 /* PersonDetailViewController.swift in Sources */,
 				381B13DE2A167A7500E47E10 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

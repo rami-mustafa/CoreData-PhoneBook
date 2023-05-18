@@ -46,6 +46,9 @@
                                                 <constraint firstItem="X3X-wR-Nfe" firstAttribute="centerY" secondItem="x7n-3V-dFd" secondAttribute="centerY" id="Ma1-Qx-HJO"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="personWritingLabel" destination="X3X-wR-Nfe" id="WAb-V7-fDB"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -72,27 +75,69 @@
                     <connections>
                         <outlet property="contactsTableView" destination="t3P-qz-fgW" id="sKx-a7-IW5"/>
                         <outlet property="searchBar" destination="jWm-Ve-JzV" id="mP6-ty-1Qa"/>
+                        <segue destination="7Cv-cU-0wD" kind="show" identifier="toUpdate" id="Wcu-FW-aEh"/>
+                        <segue destination="zxV-0U-wfI" kind="show" identifier="toDetail" id="usy-x7-qno"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1063.3587786259541" y="3.5211267605633805"/>
         </scene>
-        <!--View Controller-->
+        <!--Create new contact-->
         <scene sceneID="bam-F9-Agl">
             <objects>
-                <viewController id="rm9-0Z-mNe" sceneMemberID="viewController">
+                <viewController id="rm9-0Z-mNe" customClass="CreateContactViewController" customModule="PhoneBook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eBp-Yd-rNJ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="First and last name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ndO-Ws-4CA">
+                                <rect key="frame" x="64" y="263" width="265" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Rgu-Pp-nHc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="phone" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wxx-Ey-BxD">
+                                <rect key="frame" x="64" y="401" width="265" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Tll-6q-9I2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KTW-ku-gN9">
+                                <rect key="frame" x="169" y="521" width="55" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add"/>
+                                <connections>
+                                    <action selector="Add:" destination="rm9-0Z-mNe" eventType="touchUpInside" id="TM6-2D-8tJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="PNR-v4-AxX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wxx-Ey-BxD" firstAttribute="leading" secondItem="PNR-v4-AxX" secondAttribute="leading" constant="64" id="7Va-yb-th2"/>
+                            <constraint firstItem="ndO-Ws-4CA" firstAttribute="top" secondItem="PNR-v4-AxX" secondAttribute="top" constant="160" id="Kfs-be-hhe"/>
+                            <constraint firstItem="ndO-Ws-4CA" firstAttribute="leading" secondItem="PNR-v4-AxX" secondAttribute="leading" constant="64" id="WVg-I1-JVt"/>
+                            <constraint firstItem="wxx-Ey-BxD" firstAttribute="top" secondItem="ndO-Ws-4CA" secondAttribute="bottom" constant="88" id="XTc-ev-NIz"/>
+                            <constraint firstItem="PNR-v4-AxX" firstAttribute="trailing" secondItem="wxx-Ey-BxD" secondAttribute="trailing" constant="64" id="a6K-gX-IVE"/>
+                            <constraint firstItem="KTW-ku-gN9" firstAttribute="centerX" secondItem="eBp-Yd-rNJ" secondAttribute="centerX" id="cZw-r5-7xR"/>
+                            <constraint firstItem="KTW-ku-gN9" firstAttribute="top" secondItem="wxx-Ey-BxD" secondAttribute="bottom" constant="70" id="hVZ-hC-494"/>
+                            <constraint firstItem="PNR-v4-AxX" firstAttribute="trailing" secondItem="ndO-Ws-4CA" secondAttribute="trailing" constant="64" id="m9T-Gt-xZw"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Tkf-La-CLY"/>
+                    <navigationItem key="navigationItem" title="Create new contact" id="HAN-dd-mFE"/>
+                    <connections>
+                        <outlet property="personNameTextField" destination="ndO-Ws-4CA" id="2Xz-qM-twk"/>
+                        <outlet property="personNumberTextFiedl" destination="wxx-Ey-BxD" id="xX7-Te-4TD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BsT-qO-9K2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1844" y="4"/>
+            <point key="canvasLocation" x="1843.5114503816794" y="3.5211267605633805"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QI7-9z-TqE">
@@ -112,35 +157,101 @@
             </objects>
             <point key="canvasLocation" x="136.64122137404578" y="3.5211267605633805"/>
         </scene>
-        <!--View Controller-->
+        <!--Person Detail-->
         <scene sceneID="FUS-m9-s1e">
             <objects>
-                <viewController id="zxV-0U-wfI" sceneMemberID="viewController">
+                <viewController id="zxV-0U-wfI" customClass="PersonDetailViewController" customModule="PhoneBook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SIy-8b-a0m">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McC-ha-RhZ">
+                                <rect key="frame" x="161" y="224" width="71" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="roy-rL-7Yq">
+                                <rect key="frame" x="161" y="408" width="71" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="hem-t2-EQb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="McC-ha-RhZ" firstAttribute="centerX" secondItem="SIy-8b-a0m" secondAttribute="centerX" id="949-or-att"/>
+                            <constraint firstItem="roy-rL-7Yq" firstAttribute="top" secondItem="McC-ha-RhZ" secondAttribute="bottom" constant="148" id="Fth-8g-1wJ"/>
+                            <constraint firstItem="roy-rL-7Yq" firstAttribute="centerX" secondItem="SIy-8b-a0m" secondAttribute="centerX" id="MCd-XY-Zvx"/>
+                            <constraint firstItem="McC-ha-RhZ" firstAttribute="top" secondItem="hem-t2-EQb" secondAttribute="top" constant="121" id="xtK-Ic-ZHr"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Person Detail" id="UTo-sM-Jkb"/>
+                    <connections>
+                        <outlet property="personNameLabel" destination="McC-ha-RhZ" id="24N-BQ-6qe"/>
+                        <outlet property="personNumberLabel" destination="roy-rL-7Yq" id="zfE-Su-AQe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L16-9M-BtJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1063" y="674"/>
+            <point key="canvasLocation" x="845" y="754"/>
         </scene>
-        <!--View Controller-->
+        <!--Update the contact-->
         <scene sceneID="rsz-sz-FuC">
             <objects>
-                <viewController id="7Cv-cU-0wD" sceneMemberID="viewController">
+                <viewController id="7Cv-cU-0wD" customClass="UpdateTheContactViewController" customModule="PhoneBook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dc8-eE-5wx">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="First and last name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oYB-ml-dxa">
+                                <rect key="frame" x="64" y="263" width="265" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="RlR-vt-mHf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="phone" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Wy-o1-ymD">
+                                <rect key="frame" x="64" y="401" width="265" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="hL1-J1-KMe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rpe-XW-hh8">
+                                <rect key="frame" x="156.66666666666666" y="521" width="80" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Update"/>
+                                <connections>
+                                    <action selector="update:" destination="7Cv-cU-0wD" eventType="touchUpInside" id="elC-F7-Ws6"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="fUv-P4-4MY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rpe-XW-hh8" firstAttribute="top" secondItem="6Wy-o1-ymD" secondAttribute="bottom" constant="70" id="5E9-XO-ZGI"/>
+                            <constraint firstItem="fUv-P4-4MY" firstAttribute="trailing" secondItem="oYB-ml-dxa" secondAttribute="trailing" constant="64" id="5j9-QE-CDi"/>
+                            <constraint firstItem="6Wy-o1-ymD" firstAttribute="top" secondItem="oYB-ml-dxa" secondAttribute="bottom" constant="88" id="Cah-wM-OvP"/>
+                            <constraint firstItem="rpe-XW-hh8" firstAttribute="centerX" secondItem="Dc8-eE-5wx" secondAttribute="centerX" id="FTO-TR-Ma4"/>
+                            <constraint firstItem="fUv-P4-4MY" firstAttribute="trailing" secondItem="6Wy-o1-ymD" secondAttribute="trailing" constant="64" id="LFX-1l-4ap"/>
+                            <constraint firstItem="oYB-ml-dxa" firstAttribute="leading" secondItem="fUv-P4-4MY" secondAttribute="leading" constant="64" id="hIk-xE-apU"/>
+                            <constraint firstItem="oYB-ml-dxa" firstAttribute="top" secondItem="fUv-P4-4MY" secondAttribute="top" constant="160" id="iQP-yr-ZPb"/>
+                            <constraint firstItem="6Wy-o1-ymD" firstAttribute="leading" secondItem="fUv-P4-4MY" secondAttribute="leading" constant="64" id="lFM-JR-osw"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Update the contact" id="mgI-Qd-TW9"/>
+                    <connections>
+                        <outlet property="personNameTextFiedl" destination="oYB-ml-dxa" id="fJn-fN-P34"/>
+                        <outlet property="personNumbertextfiedl" destination="6Wy-o1-ymD" id="uht-73-CWF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qhZ-f2-HsW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1845" y="674"/>
+            <point key="canvasLocation" x="1844" y="754"/>
         </scene>
     </scenes>
     <resources>
