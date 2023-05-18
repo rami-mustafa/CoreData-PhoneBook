@@ -75,8 +75,8 @@
                     <connections>
                         <outlet property="contactsTableView" destination="t3P-qz-fgW" id="sKx-a7-IW5"/>
                         <outlet property="searchBar" destination="jWm-Ve-JzV" id="mP6-ty-1Qa"/>
-                        <segue destination="7Cv-cU-0wD" kind="show" identifier="toupdate" id="Wcu-FW-aEh"/>
                         <segue destination="zxV-0U-wfI" kind="show" identifier="toDetail" id="usy-x7-qno"/>
+                        <segue destination="7Cv-cU-0wD" kind="show" identifier="toUpdate" id="DpV-Nx-Zig"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -137,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BsT-qO-9K2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1843.5114503816794" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="2152" y="-387"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QI7-9z-TqE">
@@ -246,12 +246,12 @@
                     <navigationItem key="navigationItem" title="Update the contact" id="mgI-Qd-TW9"/>
                     <connections>
                         <outlet property="personNameTextFiedl" destination="oYB-ml-dxa" id="fJn-fN-P34"/>
-                        <outlet property="personNumbertextfiedl" destination="6Wy-o1-ymD" id="uht-73-CWF"/>
+                        <outlet property="personNumberTextFiedl" destination="6Wy-o1-ymD" id="WSv-3l-fyx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qhZ-f2-HsW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1844" y="754"/>
+            <point key="canvasLocation" x="2276" y="424"/>
         </scene>
     </scenes>
     <resources>

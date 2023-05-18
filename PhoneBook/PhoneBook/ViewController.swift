@@ -55,8 +55,8 @@ extension ViewController: UITableViewDataSource , UITableViewDelegate {
         
         let updateAction = UIContextualAction(style: .normal, title: "Gunceleme") {( contextualAction, view, boolValue )in
  
-            self.performSegue(withIdentifier: "toupdate", sender: indexPath.row)
-            
+            self.performSegue(withIdentifier: "toUpdate", sender: indexPath.row)
+
         }
         
         
