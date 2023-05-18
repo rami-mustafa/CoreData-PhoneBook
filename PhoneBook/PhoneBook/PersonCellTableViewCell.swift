@@ -3,6 +3,7 @@ import UIKit
 
 class PersonCellTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var personWritingLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
      }
