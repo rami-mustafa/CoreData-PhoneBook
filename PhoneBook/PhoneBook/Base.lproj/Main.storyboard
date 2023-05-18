@@ -75,7 +75,7 @@
                     <connections>
                         <outlet property="contactsTableView" destination="t3P-qz-fgW" id="sKx-a7-IW5"/>
                         <outlet property="searchBar" destination="jWm-Ve-JzV" id="mP6-ty-1Qa"/>
-                        <segue destination="7Cv-cU-0wD" kind="show" identifier="toUpdate" id="Wcu-FW-aEh"/>
+                        <segue destination="7Cv-cU-0wD" kind="show" identifier="toupdate" id="Wcu-FW-aEh"/>
                         <segue destination="zxV-0U-wfI" kind="show" identifier="toDetail" id="usy-x7-qno"/>
                     </connections>
                 </viewController>
