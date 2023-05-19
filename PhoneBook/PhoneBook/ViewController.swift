@@ -1,20 +1,24 @@
 
 
 import UIKit
+import CoreData
+
+let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
 class ViewController: UIViewController {
+    
+    let context = appDelegate.persistentContainer.viewContext
 
     @IBOutlet weak var contactsTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var list  = [String]()
+    var contactsList  = [Contacts]()
        
        
        override func viewDidLoad() {
            super.viewDidLoad()
            
-           list = ["ahmet ", "ali ", "yusuf","rami"]
-           
+ 
            contactsTableView.dataSource = self
            contactsTableView.delegate = self
            
@@ -33,12 +37,15 @@ extension ViewController: UITableViewDataSource , UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
+        return contactsList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let person = contactsList[indexPath.row]
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as! PersonCellTableViewCell
-        cell.personWritingLabel.text = list[indexPath.row]
+        cell.personWritingLabel.text = "\(person.person_name!) - \(person.person_number!)"
         
         return cell
     }
