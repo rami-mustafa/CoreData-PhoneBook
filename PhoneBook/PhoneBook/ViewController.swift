@@ -23,10 +23,27 @@ class ViewController: UIViewController {
            contactsTableView.delegate = self
            
            searchBar.delegate = self
+           
+           getAllContacts()
        }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getAllContacts()
+        contactsTableView.reloadData()
+
+    }
        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
            
        }
+    
+    func getAllContacts(){
+        do {
+            contactsList = try context.fetch(Contacts.fetchRequest())
+        } catch {
+            print(error)
+        }
+    }
 
 }
 
@@ -45,7 +62,8 @@ extension ViewController: UITableViewDataSource , UITableViewDelegate {
         let person = contactsList[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as! PersonCellTableViewCell
-        cell.personWritingLabel.text = "\(person.person_name!) - \(person.person_number!)"
+        
+        cell.personWritingLabel.text = "\(person.person_name!) - \(person.person_number)"
         
         return cell
     }
