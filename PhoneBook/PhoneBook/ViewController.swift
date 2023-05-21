@@ -63,7 +63,7 @@ extension ViewController: UITableViewDataSource , UITableViewDelegate {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as! PersonCellTableViewCell
         
-        cell.personWritingLabel.text = "\(person.person_name!) - \(person.person_number)"
+        cell.personWritingLabel.text = "\(person.person_name!) - \(person.person_number!)"
         
         return cell
     }
@@ -76,6 +76,12 @@ extension ViewController: UITableViewDataSource , UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Sil") {( contextualAction, view, boolValue )in
             print("çalıştı")
+            
+            let person = self.contactsList[indexPath.row]
+            self.context.delete(person)
+            appDelegate.saveContext()
+            self.getAllContacts()
+            self.contactsTableView.reloadData()
         }
         
         let updateAction = UIContextualAction(style: .normal, title: "Gunceleme") {( contextualAction, view, boolValue )in
