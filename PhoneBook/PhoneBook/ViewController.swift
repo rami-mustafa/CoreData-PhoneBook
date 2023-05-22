@@ -34,6 +34,17 @@ class ViewController: UIViewController {
 
     }
        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           let indexs = sender as? Int
+           
+           if segue.identifier == "toUpdate" {
+               let WillGoVc = segue.destination as! UpdateTheContactViewController
+               WillGoVc.Person = contactsList[indexs!]
+           }
+           
+           if segue.identifier == "toDetail" {
+               let WillGoVc = segue.destination as! PersonDetailViewController
+               WillGoVc.Person = contactsList[indexs!]
+           }
            
        }
     
