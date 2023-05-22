@@ -5,10 +5,15 @@ class PersonDetailViewController: UIViewController {
 
     @IBOutlet weak var personNumberLabel: UILabel!
     @IBOutlet weak var personNameLabel: UILabel!
+    
+    var Person:Contacts?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        if let p = Person {
+            personNameLabel.text = p.person_name
+            personNumberLabel.text = p.person_number
+        }
     }
     
 
